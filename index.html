@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonard Daniel Rivas Jr. | Full Stack Developer & AV Integration Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --neon-yellow: #FFFF00;
+            --bright-yellow: #F5FF00;
+            --dark-yellow: #E6E600;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #2d2d2d;
+            --light-gray: #3d3d3d;
+            --lighter-gray: #4d4d4d;
+            --text-gray: #b0b0b0;
+            --white: #ffffff;
+            --off-white: #f5f5f5;
+        }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text-gray); background: var(--dark-gray); overflow-x: hidden; }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(26, 26, 26, 0.98); backdrop-filter: blur(10px); border-bottom: 2px solid var(--neon-yellow); z-index: 1000; padding: 1rem 0; }
+        nav .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        nav .logo { font-size: 1.5rem; font-weight: 800; font-family: 'Roboto Mono', monospace; color: var(--neon-yellow); text-shadow: 0 0 10px var(--neon-yellow); }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { text-decoration: none; color: var(--text-gray); font-weight: 600; transition: all 0.3s; position: relative; }
+        nav a:hover { color: var(--neon-yellow); text-shadow: 0 0 8px var(--neon-yellow); }
+        .hero { min-height: 100vh; display: flex; align-items: center; background: var(--dark-gray); color: var(--off-white); padding: 6rem 2rem 4rem; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(90deg, var(--medium-gray) 1px, transparent 1px), linear-gradient(0deg, var(--medium-gray) 1px, transparent 1px); background-size: 50px 50px; opacity: 0.3; }
+        .hero .container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero h1 { font-size: 4rem; font-weight: 800; margin-bottom: 1rem; color: var(--white); font-family: 'Roboto Mono', monospace; }
+        .hero h1 span { color: var(--neon-yellow); text-shadow: 0 0 20px var(--neon-yellow); }
+        .hero .subtitle { font-size: 1.5rem; margin-bottom: 1rem; color: var(--neon-yellow); font-family: 'Roboto Mono', monospace; }
+        .btn { padding: 1rem 2rem; text-decoration: none; font-weight: 600; transition: all 0.3s; display: inline-block; font-family: 'Roboto Mono', monospace; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        .btn-primary { background: var(--neon-yellow); color: var(--dark-gray); border: 2px solid var(--neon-yellow); }
+        section { padding: 5rem 2rem; background: var(--dark-gray); }
+        section:nth-child(even) { background: var(--medium-gray); }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2.5rem; font-weight: 800; text-align: center; margin-bottom: 1rem; color: var(--neon-yellow); font-family: 'Roboto Mono', monospace; text-transform: uppercase; }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .skill-card { background: var(--light-gray); padding: 2rem; border: 2px solid var(--lighter-gray); transition: all 0.3s; }
+        .skill-card i { font-size: 3rem; color: var(--neon-yellow); margin-bottom: 1rem; }
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .cert-item { background: var(--light-gray); padding: 1.5rem; border: 2px solid var(--lighter-gray); border-left: 4px solid var(--neon-yellow); }
+        .volunteer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .volunteer-card { background: var(--light-gray); padding: 2rem; border: 2px solid var(--lighter-gray); border-top: 4px solid var(--neon-yellow); }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .project-card { background: var(--light-gray); border: 2px solid var(--lighter-gray); overflow: hidden; transition: all 0.3s; }
+        .project-image { width: 100%; height: 250px; background: var(--medium-gray); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .project-image img { width: 100%; height: 100%; object-fit: cover; }
+        .project-content { padding: 1.5rem; }
+        .tech-tag { background: var(--medium-gray); padding: 0.3rem 0.8rem; font-size: 0.85rem; color: var(--neon-yellow); border: 1px solid var(--lighter-gray); font-family: 'Roboto Mono', monospace; margin-right: 5px; }
+        .clients-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center; }
+        .client-item { padding: 1.5rem; background: var(--light-gray); border: 2px solid var(--lighter-gray); }
+        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .contact-item { display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: var(--light-gray); border: 2px solid var(--lighter-gray); border-left: 4px solid var(--neon-yellow); margin-bottom: 1rem; }
+        footer { background: var(--dark-gray); color: var(--text-gray); text-align: center; padding: 2rem; border-top: 2px solid var(--neon-yellow); }
+    </style>
+</head>
+<body>
+    <nav><div class="container"><div class="logo">LDR_JR</div><ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#volunteer">Community</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+    <section id="home" class="hero"><div class="container"><h1><span>></span> Leonard Daniel Rivas Jr.</h1><div class="subtitle">Full Stack Developer & AV Integration Specialist</div><p>Transforming complex technical challenges into elegant solutions.</p><div class="cta-buttons"><a href="#contact" class="btn btn-primary">Get In Touch</a></div></div></section>
+    <section id="about"><div class="container"><h2 class="section-title">About Me</h2><div class="about-content"><div><h3>My Story</h3><p>My journey into technology began with a bold challenge: building my first gaming computer from scratch.</p></div></div></div></section>
+    <section id="skills"><div class="container"><h2 class="section-title">Technical Skills</h2><div class="skills-grid"><div class="skill-card"><i class="fas fa-code"></i><h3>Software</h3><ul><li>Python</li><li>Java</li><li>SQL</li></ul></div><div class="skill-card"><i class="fas fa-network-wired"></i><h3>AV & Networking</h3><ul><li>Dante (L1-L3)</li><li>Extron</li><li>Crestron</li></ul></div></div></div></section>
+    <section id="volunteer"><div class="container"><h2 class="section-title">Community Service</h2><div class="volunteer-grid"><div class="volunteer-card"><i class="fas fa-baseball-ball"></i><h3>Arcadia Pony Baseball</h3><span class="role">Manager / Coach</span></div><div class="volunteer-card"><i class="fas fa-users"></i><h3>Little League District 18</h3><span class="role">Manager & Board</span></div></div></div></section>
+    <section id="projects"><div class="container"><h2 class="section-title">Featured Projects</h2><div class="projects-grid">
+        <div class="project-card"><div class="project-image"><img src="20241107_122057[1].jpg" alt="Project"></div><div class="project-content"><h3>Enterprise AV Rack</h3><div class="tech-tags"><span class="tech-tag">Networking</span></div></div></div>
+        <div class="project-card"><div class="project-image"><img src="20260209_112757[1].jpg" alt="Project"></div><div class="project-content"><h3>Custom Gaming PC</h3><div class="tech-tags"><span class="tech-tag">Hardware</span></div></div></div>
+        <div class="project-card"><div class="project-image"><img src="20241018_085004[1].jpg" alt="Project"></div><div class="project-content"><h3>Network Infrastructure</h3><div class="tech-tags"><span class="tech-tag">Networking</span></div></div></div>
+        <div class="project-card"><div class="project-image"><img src="20240424_134630[1].jpg" alt="Project"></div><div class="project-content"><h3>Structured Cabling</h3><div class="tech-tags"><span class="tech-tag">Fiber</span></div></div></div>
+        <div class="project-card"><div class="project-image"><img src="20240917_132140[1].jpg" alt="Project"></div><div class="project-content"><h3>Equipment Cabinet</h3><div class="tech-tags"><span class="tech-tag">Installation</span></div></div></div>
+        <div class="project-card"><div class="project-image"><img src="20240703_132119[1].jpg" alt="Project"></div><div class="project-content"><h3>Control Systems</h3><div class="tech-tags"><span class="tech-tag">DSP</span></div></div></div>
+        <div class="project-card"><div class="project-image"><img src="20240502_152413[1].jpg" alt="Project"></div><div class="project-content"><h3>Conference Room</h3><div class="tech-tags"><span class="tech-tag">Video</span></div></div></div>
+        <div class="project-card"><div class="project-image"><img src="20240423_072828[1].jpg" alt="Project"></div><div class="project-content"><h3>System Assembly</h3><div class="tech-tags"><span class="tech-tag">Hardware</span></div></div></div>
+    </div></div></section>
+    <section id="contact"><div class="container"><h2 class="section-title">Let's Connect</h2><div class="contact-content"><div class="contact-info"><div class="contact-item"><i class="fas fa-envelope"></i><div><h4>Email</h4><p>ldrivas.jr@gmail.com</p></div></div></div></div></div></section>
+    <footer><div class="container"><p>&copy; 2026 Leonard Daniel Rivas Jr. All rights reserved.</p></div></footer>
+</body>
+</html>
