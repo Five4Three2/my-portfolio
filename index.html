@@ -89,7 +89,8 @@
         .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; }
         .cert-item { background: var(--light-gray); padding: 1.5rem; border: 2px solid var(--lighter-gray); border-left: 4px solid var(--neon-yellow); transition: all 0.3s; display: grid; grid-template-columns: 130px 1fr; align-items: center; gap: 1.2rem; min-height: 150px; }
         .cert-item:hover { transform: translateX(10px); box-shadow: -5px 0 20px rgba(255,255,0,0.2); }
-        .cert-logo { width: 130px; height: 130px; object-fit: contain; flex-shrink: 0; background: transparent; padding: 4px; border-radius: 0; mix-blend-mode: multiply; filter: contrast(1.1) saturate(1.1); }
+        .cert-logo { width: 130px; height: 130px; object-fit: contain; flex-shrink: 0; background: #ffffff; padding: 10px; border-radius: 6px; filter: drop-shadow(0 0 6px rgba(255,255,0,0.15)); transition: filter 0.3s; }
+        .cert-item:hover .cert-logo { filter: drop-shadow(0 0 10px rgba(255,255,0,0.4)); }
         .cert-item h4 { color: var(--neon-yellow); margin-bottom: 0.5rem; font-family: 'Roboto Mono', monospace; }
         .cert-item p { color: var(--text-gray); font-size: 0.95rem; }
 
@@ -97,11 +98,13 @@
         .volunteer-grid { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
         .volunteer-card { background: var(--light-gray); padding: 2rem; border: 2px solid var(--lighter-gray); border-top: 4px solid var(--neon-yellow); transition: all 0.3s; width: 300px; flex-shrink: 0; text-align: center; }
         .volunteer-card:hover { border-color: var(--neon-yellow); box-shadow: 0 0 30px rgba(255,255,0,0.2); transform: translateY(-8px); }
-        .volunteer-logo-wrap { width: 180px; height: 180px; margin: 0 auto 1.25rem auto; display: flex; align-items: center; justify-content: center; background: transparent; overflow: hidden; }
-        .volunteer-logo { max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: multiply; filter: contrast(1.1) saturate(1.1); }
+        .volunteer-logo-wrap { width: 200px; height: 200px; margin: 0 auto 1.25rem auto; display: flex; align-items: center; justify-content: center; background: #ffffff; border-radius: 10px; overflow: hidden; padding: 12px; }
+        .volunteer-logo { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 4px rgba(0,0,0,0.2)); transition: filter 0.3s; }
+        .volunteer-card:hover .volunteer-logo { filter: drop-shadow(0 0 8px rgba(255,255,0,0.3)); }
         .volunteer-card h3 { color: var(--white); font-family: 'Roboto Mono', monospace; margin-bottom: 0.75rem; font-size: 1.2rem; }
         .volunteer-card .role { color: var(--neon-yellow); font-weight: 600; margin-bottom: 1rem; display: block; font-size: 0.95rem; }
         .volunteer-card p { color: var(--text-gray); line-height: 1.6; }
+        .volunteer-logo-wrap.volunteer-logo-lg { width: 220px; height: 220px; padding: 8px; }
 
         /* Projects */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
@@ -121,8 +124,8 @@
         .clients-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center; }
         .client-item { padding: 1.25rem; background: var(--light-gray); border: 2px solid var(--lighter-gray); transition: all 0.3s; display: flex; align-items: center; justify-content: center; min-height: 168px; }
         .client-item:hover { border-color: var(--neon-yellow); box-shadow: 0 0 24px rgba(255,255,0,0.22); transform: translateY(-6px); }
-        .client-logo { width: 160px; height: 100px; object-fit: contain; background: transparent; mix-blend-mode: multiply; filter: contrast(1.1) saturate(1.05); transition: all 0.3s; }
-        .client-item:hover .client-logo { filter: contrast(1.2) saturate(1.2) drop-shadow(0 0 6px rgba(255,255,255,0.2)); transform: scale(1.08); }
+        .client-logo { width: 160px; height: 100px; object-fit: contain; background: #ffffff; padding: 10px; border-radius: 6px; filter: drop-shadow(0 0 4px rgba(255,255,0,0.1)); transition: all 0.3s; }
+        .client-item:hover .client-logo { filter: drop-shadow(0 0 10px rgba(255,255,0,0.4)); transform: scale(1.06); }
 
         /* Contact */
         .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
@@ -360,13 +363,13 @@
             <p class="section-subtitle">Leadership and service beyond the technical field</p>
             <div class="volunteer-grid reveal-stagger">
                 <div class="volunteer-card">
-                    <div class="volunteer-logo-wrap"><img src="Arcadia Pony.png" alt="Arcadia Pony Baseball" class="volunteer-logo"></div>
+                    <div class="volunteer-logo-wrap volunteer-logo-lg"><img src="Arcadia Pony.png" alt="Arcadia Pony Baseball" class="volunteer-logo"></div>
                     <h3>Arcadia Pony Baseball</h3>
                     <span class="role">Manager / Coach</span>
                     <p>Worked with youth on strengthening baseball skills and self-confidence in the San Gabriel Valley, CA.</p>
                 </div>
                 <div class="volunteer-card">
-                    <div class="volunteer-logo-wrap"><img src="Little League.png" alt="Little League" class="volunteer-logo"></div>
+                    <div class="volunteer-logo-wrap volunteer-logo-lg"><img src="Little League.png" alt="Little League" class="volunteer-logo"></div>
                     <h3>Little League District 18</h3>
                     <span class="role">Manager & Board of Director</span>
                     <p>Provided children the fundamentals of baseball and assisted the league in all aspects of operations in Temple City, CA.</p>
@@ -378,7 +381,7 @@
                     <p>Provided local fire and police departments with emergency communication support.</p>
                 </div>
                 <div class="volunteer-card">
-                    <div class="volunteer-logo-wrap"><img src="LASD logo.png" alt="LASD" class="volunteer-logo"></div>
+                    <div class="volunteer-logo-wrap volunteer-logo-lg"><img src="LASD logo.png" alt="LASD" class="volunteer-logo"></div>
                     <h3>LA County Sheriff's Dept.</h3>
                     <span class="role">Civilian / Community Volunteer</span>
                     <p>Assisted community members and Deputies with various tasks at the local station.</p>
